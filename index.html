@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Halloween</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff4500;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>🎃 Halloween 2025 🎃</h1>
+            <h2>¿Quieres celebrar Halloween conmigo?</h2>
+            
+            <div class="buttons-container">
+                <button class="btn btn-yes" onclick="mostrarImagen()">
+                    Sí 👻
+                </button>
+                <button class="btn btn-no" onclick="mostrarImagen()">
+                    No 🙈
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <img src="337C4668-F67F-4C4A-8D1C-3F96E5CCB83A.jpeg" alt="">
+    </div>
+
+    <script>
+        function mostrarImagen() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+        
+        document.getElementById('popup').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

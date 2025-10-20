@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Halloween</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff4500;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .resultado {
+            background: black;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #foto-respuesta {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="formulario">
+            <h1>🎃 Halloween 2025 🎃</h1>
+            <h2>¿Quieres celebrar Halloween conmigo?</h2>
+            
+            <div class="buttons-container">
+                <button class="btn btn-yes" onclick="mostrarRespuesta('si')">
+                    Sí 👻
+                </button>
+                <button class="btn btn-no" onclick="mostrarRespuesta('no')">
+                    No 🙈
+                </button>
+            </div>
+        </div>
+
+        <div class="resultado" id="resultado" style="display: none;">
+            <img id="foto-respuesta" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function mostrarRespuesta(respuesta) {
+            const formulario = document.getElementById('formulario');
+            const resultado = document.getElementById('resultado');
+            const fotoRespuesta = document.getElementById('foto-respuesta');
+            
+            formulario.style.display = 'none';
+            resultado.style.display = 'flex';
+            
+            if (respuesta === 'si') {
+                fotoRespuesta.src = 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=800&fit=crop&crop=face';
+            } else {
+                fotoRespuesta.src = 'https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=800&h=800&fit=crop&crop=face';
+            }
+        }
+    </script>
+</body>
+</html>
